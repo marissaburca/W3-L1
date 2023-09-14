@@ -192,8 +192,9 @@ const movies = [
 */
 
 const older = (array) => {
-  let result = { 
-    Year: 2100 };
+  let result = {
+    Year: 2100,
+  };
   array.forEach((movie) => {
     let currentYear = parseInt(movie.Year);
     if (currentYear < result.Year) {
@@ -209,50 +210,48 @@ console.log(older(movies));
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
-const nrmovies = (array)=> {
-  return array.length
-}
-console.log(nrmovies(movies))
+const nrmovies = (array) => {
+  return array.length;
+};
+console.log(nrmovies(movies));
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 
-const titles =  (arr) => { 
-  return arr.map((a)=> a.Title)
- }
+const titles = (arr) => {
+  return arr.map((a) => a.Title);
+};
 
-console.log(titles(movies))
+console.log(titles(movies));
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
-const duemila = (arr)=>{
-return arr.filter((a)=> parseInt(a.Year) >= 2000)
-}
-console.log(duemila(movies))
+const duemila = (arr) => {
+  return arr.filter((a) => parseInt(a.Year) >= 2000);
+};
+console.log(duemila(movies));
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
-const giga = (arr)=> {
-return arr.reduce((total,counter)=> total += parseInt(counter.Year),0)
-
-}
-console.log(giga(movies))
+const giga = (arr) => {
+  return arr.reduce((total, counter) => (total += parseInt(counter.Year)), 0);
+};
+console.log(giga(movies));
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
-const trovato= (arr,id) =>{
-  return arr.find( (elem)=> elem.imdbID === id)
-}
+const trovato = (arr, id) => {
+  return arr.find((elem) => elem.imdbID === id);
+};
 
-console.log(trovato(movies,"tt0057261"))
+console.log(trovato(movies, "tt0057261"));
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
-const index= ((arr, year)=>{
-  return arr.findIndex((elem)=> parseInt(elem.Year) === year)
-
-})
-console.log(index(movies, 2012))
+const index = (arr, year) => {
+  return arr.findIndex((elem) => parseInt(elem.Year) === year);
+};
+console.log(index(movies, 2012));
